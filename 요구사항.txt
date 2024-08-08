@@ -1,0 +1,83 @@
+1.Todo
+	- 등록
+		- 일시를 선택해서 등록
+		- 우선순위(중요도 4단계)
+			- 중요O, 급함O
+			- 중요O, 급함X
+			- 중요X, 급함O
+			- 중요X, 급함X
+	- 조회
+		- 일별, 월별, 년도별
+		- 완료, 미완료
+		- 중요도
+		- 정렬(수정일시기준)
+	- 수정
+		- 완료, 미완료
+		- Todo 내용
+		- 중요도
+		- 일시
+	- 삭제
+		- TodoID 기준
+	- 인증
+		- 회원가입
+		- 로그인
+		- 로그아웃
+		- 비밀번호 변경
+
+2. 데이터 베이스(todolist_study_db)
+
+	- 테이블
+		- todo_tb
+			todoId		(PK, NN, AI)
+			userId		(NN)
+			title		(NN)
+			content		(NN)
+			important	(NN)	1, 2
+			busy		(NN)	1, 2
+			status		(NN)	1, 2
+			todoDateTime	(NN)	yyyy-MM-dd hh:mm:ss
+			createDate	(NN)	yyyy-MM-dd hh:mm:ss
+			updateDate	(NN)	yyyy-MM-dd hh:mm:ss
+		- user_tb
+			userId		(PK, NN, AI)
+			username		(NN, UQ)
+			password		(NN)
+			name		(NN)
+			createDate	(NN)	yyyy-MM-dd hh:mm:ss
+			updateDate	(NN)	yyyy-MM-dd hh:mm:ss
+
+3. 페이지 라우팅 주소
+
+	- path: /			name: 대시보드
+	- path: /login		name: 로그인
+	- path: /join		name: 회원가입
+
+4. 기능별 모달
+
+	- Todo등록
+	- Todo수정
+	- 비밀번호 변경
+
+npm i react-router-dom react-icons recoil axios react-modal @emotion/react react-select
+
+display: element의특성변경
+position: element의위치변경 어떤요소위에 올려야할때 씀
+inline: 글자의크기를따라감 컨텐츠의 사이즈를 수정할 수 없다
+block: 블럭의크기를따라 아래로쌓임 1줄씩크기가먹기때문에 오른쪽으로 정렬이안됨
+flex-wrap: wrap; 부모의크기가벗어나면 다음줄로변경, nowrap 안바꿈
+justify: 가로줄의 기준
+align: 세로줄의 기준
+items: 한줄에대한 상태
+content: 여러줄에대한 상태
+
+align-self: 자기자신위치를 지정
+flex-grow: 1; 컨텐츠의 남은여백을 채우거나 나눠가짐
+flex-shrink: 1; 컨텐츠의 넘는 여백을 지우거나 나눠서 뺌
+
+~: 형제들
++: 인접형제
+
+position: static; 기본값 top, bottom, left, right 사용불가
+position: absolute; 상위의 위치를 static은 무시하고 따라감
+position: relative; 자기위치에서 위치변경 right와bottom사용불가
+z-index: position을 사용할때 z축 기준으로위치함
